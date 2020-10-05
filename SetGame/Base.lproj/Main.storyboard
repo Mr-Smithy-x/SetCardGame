@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SetGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ZQz-2B-lXx">
+                                <rect key="frame" x="20" y="112" width="381" height="495"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="LeL-my-YgS">
+                                        <rect key="frame" x="0.0" y="0.0" width="381" height="105"/>
+                                        <subviews>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xx-o3-2CD" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="78" height="105"/>
+                                                <gestureRecognizers/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="stagnant" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="as8-f8-kee" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                                <rect key="frame" x="101" y="0.0" width="78" height="105"/>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ka7-n2-j9b" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                                <rect key="frame" x="202" y="0.0" width="78" height="105"/>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQu-vG-VtT" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                                <rect key="frame" x="303" y="0.0" width="78" height="105"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="Kmv-Xa-VJ3">
+                                        <rect key="frame" x="0.0" y="130" width="381" height="105"/>
+                                        <subviews>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEj-TJ-Pxx" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="78" height="105"/>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URR-oc-TA5" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                                <rect key="frame" x="101" y="0.0" width="78" height="105"/>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJO-1q-ZVS" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                                <rect key="frame" x="202" y="0.0" width="78" height="105"/>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UPV-Y4-AqI" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                                <rect key="frame" x="303" y="0.0" width="78" height="105"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="dZ7-WK-CdI">
+                                        <rect key="frame" x="0.0" y="260" width="381" height="105"/>
+                                        <subviews>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBN-JP-F00" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="78" height="105"/>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J57-In-Jmx" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                                <rect key="frame" x="101" y="0.0" width="78" height="105"/>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Mn-RW-q9R" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                                <rect key="frame" x="202" y="0.0" width="78" height="105"/>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obS-2Q-lOM" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                                <rect key="frame" x="303" y="0.0" width="78" height="105"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="TZA-7g-cw4">
+                                        <rect key="frame" x="0.0" y="390" width="381" height="105"/>
+                                        <subviews>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJH-CM-M99" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="78" height="105"/>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Elh-DL-z3a" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                                <rect key="frame" x="101" y="0.0" width="78" height="105"/>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2O-Os-Vcr" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                                <rect key="frame" x="202" y="0.0" width="78" height="105"/>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ooC-Ob-XXz" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                                <rect key="frame" x="303" y="0.0" width="78" height="105"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHz-v8-Osy">
+                                <rect key="frame" x="235" y="768" width="159" height="62"/>
+                                <color key="backgroundColor" red="0.32291805769999998" green="0.27152302699999997" blue="0.55139593909999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="66W-k8-zom"/>
+                                </constraints>
+                                <state key="normal" title="New Game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDealCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ql7-JU-ESV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ya-n8-DSc">
+                                <rect key="frame" x="20" y="768" width="159" height="62"/>
+                                <color key="backgroundColor" red="0.56150856598984777" green="0.36239048499051457" blue="0.085141878052420628" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="cOG-m0-6Qx"/>
+                                </constraints>
+                                <state key="normal" title="Peek">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPeek:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tYC-Mm-CAp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbi-zS-AUB">
+                                <rect key="frame" x="20" y="633" width="374" height="118"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="118" id="Muc-N4-hzs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.24997738222873692" green="0.55139593908629436" blue="0.37749014039903128" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Rbi-zS-AUB" firstAttribute="leading" secondItem="ZQz-2B-lXx" secondAttribute="leading" id="1cy-cI-ehp"/>
+                            <constraint firstItem="Rbi-zS-AUB" firstAttribute="trailing" secondItem="aHz-v8-Osy" secondAttribute="trailing" id="2V4-qy-iuH"/>
+                            <constraint firstItem="0ya-n8-DSc" firstAttribute="leading" secondItem="Rbi-zS-AUB" secondAttribute="leading" id="56E-Xg-fKO"/>
+                            <constraint firstItem="ZQz-2B-lXx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="68" id="7xs-0p-HQX"/>
+                            <constraint firstItem="Rbi-zS-AUB" firstAttribute="leading" secondItem="aHz-v8-Osy" secondAttribute="leading" constant="-215" id="BiI-5a-hWj"/>
+                            <constraint firstItem="aHz-v8-Osy" firstAttribute="top" secondItem="Rbi-zS-AUB" secondAttribute="bottom" constant="17" id="IwQ-HJ-Lxo"/>
+                            <constraint firstItem="ZQz-2B-lXx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="VaI-C1-LgF"/>
+                            <constraint firstItem="aHz-v8-Osy" firstAttribute="leading" secondItem="0ya-n8-DSc" secondAttribute="trailing" constant="56" id="YJi-eA-cBA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZQz-2B-lXx" secondAttribute="bottom" constant="255" id="cnb-3r-0df"/>
+                            <constraint firstItem="0ya-n8-DSc" firstAttribute="baseline" secondItem="aHz-v8-Osy" secondAttribute="baseline" id="lEU-4n-Tjl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZQz-2B-lXx" secondAttribute="trailing" constant="13" id="oMD-2K-6jP"/>
+                            <constraint firstItem="Rbi-zS-AUB" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="tQJ-uC-PsF"/>
+                            <constraint firstItem="aHz-v8-Osy" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-32" id="vJb-L7-0e4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="dealCardBtn" destination="aHz-v8-Osy" id="mlx-i4-ep9"/>
+                        <outlet property="scoreCard" destination="Rbi-zS-AUB" id="3u8-ro-Gwr"/>
+                        <outletCollection property="views" destination="7Xx-o3-2CD" collectionClass="NSMutableArray" id="weJ-YC-uJx"/>
+                        <outletCollection property="views" destination="as8-f8-kee" collectionClass="NSMutableArray" id="hBQ-S7-l83"/>
+                        <outletCollection property="views" destination="ka7-n2-j9b" collectionClass="NSMutableArray" id="okM-Lh-wWJ"/>
+                        <outletCollection property="views" destination="NQu-vG-VtT" collectionClass="NSMutableArray" id="jnV-qE-Urn"/>
+                        <outletCollection property="views" destination="KEj-TJ-Pxx" collectionClass="NSMutableArray" id="8FX-4Y-tsD"/>
+                        <outletCollection property="views" destination="URR-oc-TA5" collectionClass="NSMutableArray" id="Sfg-ee-Qco"/>
+                        <outletCollection property="views" destination="JJO-1q-ZVS" collectionClass="NSMutableArray" id="Tbf-Sk-YRN"/>
+                        <outletCollection property="views" destination="UPV-Y4-AqI" collectionClass="NSMutableArray" id="Ca8-5N-AcC"/>
+                        <outletCollection property="views" destination="bBN-JP-F00" collectionClass="NSMutableArray" id="oSA-kV-eQQ"/>
+                        <outletCollection property="views" destination="J57-In-Jmx" collectionClass="NSMutableArray" id="Bra-dY-fiT"/>
+                        <outletCollection property="views" destination="0Mn-RW-q9R" collectionClass="NSMutableArray" id="jy5-3a-i9m"/>
+                        <outletCollection property="views" destination="obS-2Q-lOM" collectionClass="NSMutableArray" id="pVs-x7-YKl"/>
+                        <outletCollection property="views" destination="HJH-CM-M99" collectionClass="NSMutableArray" id="Iwa-9Z-DO9"/>
+                        <outletCollection property="views" destination="Elh-DL-z3a" collectionClass="NSMutableArray" id="2LG-dc-jwE"/>
+                        <outletCollection property="views" destination="M2O-Os-Vcr" collectionClass="NSMutableArray" id="Pkv-th-czA"/>
+                        <outletCollection property="views" destination="ooC-Ob-XXz" collectionClass="NSMutableArray" id="E8u-dW-l2i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
