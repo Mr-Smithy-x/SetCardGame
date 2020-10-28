@@ -326,23 +326,24 @@ class SetCardGridContainerView: UIView {
 
 extension SetCardGridContainerView {
     
-    struct ViewRatios {
+    private struct ViewRatios {
         static let widthRatio: CGFloat = 0.75
         static let heightRatio: CGFloat = 0.75
     }
     
-    var columnHeight: CGFloat {
+    private var columnHeight: CGFloat {
         return  self.bounds.size.height / CGFloat(rows)
     }
-    var columnWidth: CGFloat {
+    
+    private var columnWidth: CGFloat {
         return  self.bounds.size.width / CGFloat(columns)
     }
     
-    var viewWidth: CGFloat {
+    private var viewWidth: CGFloat {
         return self.columnWidth * ViewRatios.widthRatio
     }
     
-    var viewHeight: CGFloat {
+    private var viewHeight: CGFloat {
         return self.columnHeight * ViewRatios.heightRatio
     }
     
