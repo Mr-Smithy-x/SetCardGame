@@ -13,6 +13,9 @@ extension Array where Element == SetCardView {
     
     func findMatching(show: Bool = true) -> Bool {
         var should_break = false
+        if self.count == 0 {
+            return false
+        }
         for i in 0...self.count - 1 {
             for j in 0...self.count - 1  {
                 for k in 0...self.count - 1 {

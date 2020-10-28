@@ -9,5 +9,6 @@
 import Foundation
 
 protocol SetGameTimerProtocol {
-    func onTicked(player: Int)
+    func onTicked(player: Int, current_timer: Int)
+    func onFinished(scoreCard: String)
 }

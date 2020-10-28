@@ -10,11 +10,15 @@ import Foundation
 import UIKit
 
 class EnhancedViewController: UIViewController, SetGameTimerProtocol {
+    func onFinished(scoreCard: String) {
+        currentPlayer.text = scoreCard
+    }
+    
     
     @IBOutlet weak var currentPlayer: UILabel!
     
-    func onTicked(player: Int) {
-        currentPlayer.text = "Current Player: \(player + 1)"
+    func onTicked(player: Int, current_timer: Int) {
+        currentPlayer.text = "Current Player: \(player + 1)\n\(current_timer) seconds left"
     }
     
     

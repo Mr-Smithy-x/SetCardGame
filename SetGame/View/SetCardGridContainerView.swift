@@ -13,13 +13,30 @@ import UIKit
 class SetCardGridContainerView: UIView {
 
     var timer = Timer()
-    var countdown = 15;
+    var countdown = 15 {
+        didSet {
+            print(players)
+            timerProtocol?.onTicked(player: currentPlayer, current_timer: countdown)
+            setNeedsDisplay()
+            setNeedsLayout()
+            if(!cardViews.hasMatch() && deck.count() == 0){
+                gameOver()
+            }
+            
+            print("!hasMatch: \(!cardViews.hasMatch()) && Deck Count == 0: \(deck.count() == 0)")
+        }
+    }
     var timerProtocol: SetGameTimerProtocol? = nil
     @IBInspectable
     var rows: Int = 6 {
         didSet {
-            setNeedsDisplay()
-            setNeedsLayout()
+            if(deck.count() > 0){
+                setNeedsDisplay()
+                setNeedsLayout()
+            }else{
+                rows = oldValue
+                print(rows)
+            }
         }
     }
     
@@ -41,11 +58,7 @@ class SetCardGridContainerView: UIView {
         }
     }
     
-    private var currentPlayer: Int = 1 {
-        didSet {
-            timerProtocol?.onTicked(player: currentPlayer)
-        }
-    }
+    private var currentPlayer: Int = 0
     private var scoreCard: String = ""
     private var players: [Int: Int] = [Int:Int]()
     private var startTime: Int64 = 0
@@ -67,7 +80,7 @@ class SetCardGridContainerView: UIView {
     func peek(){
         if(cardViews.peek()){
             players[currentPlayer]? -= 10
-        }else{
+        }else if deck.count() == 0{
             gameOver()
         }
     }
@@ -92,6 +105,8 @@ class SetCardGridContainerView: UIView {
     }
     
     func startNewGame(){
+        players[0] = 0
+        players[1] = 0
         deck.reset()
         for card in cardViews {
             card.setCard(card: deck.dealCard())
@@ -104,6 +119,7 @@ class SetCardGridContainerView: UIView {
         timer = Timer()
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
         timer.fire()
+        timerAction()
     }
     
     @objc func timerAction(){
@@ -173,42 +189,59 @@ class SetCardGridContainerView: UIView {
                             Final Score: \(score) in \(minutes)m \(seconds)s
                         """
         }
+        timerProtocol?.onFinished(scoreCard: scoreCard)
+        if(timer.isValid){
+            timer.invalidate()
+        }
     }
     
     private func dealCards(){
         let calculatedSize = columns * rows
         let cardCount = self.cardViews.count
+        print("CALC: \(calculatedSize) - Count \(cardCount)")
         if cardCount < calculatedSize  {
-            for index in 0..<calculatedSize {
-                let row = Int((index / columns))
-                let column = index % columns
-                if let card = deck.dealCard() {
-                    let view = SetCardEnhancedView()
-                    view.setCard(card: card)
-                    let paddingX = (self.columnWidth - self.viewWidth)
-                    let positionX = paddingX / 2 + (self.columnWidth * CGFloat(column))
-                    let paddingY = (self.columnHeight - self.viewHeight)
-                    let positionY = paddingY / 2 + (self.columnHeight * CGFloat(row))
-                    view.frame = CGRect(x:  positionX, y: positionY, width: self.viewWidth, height: self.viewHeight)
-                    let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapSetCardView(_:)))
-                    view.isOpaque = false
-                    view.isUserInteractionEnabled = true
-                    view.addGestureRecognizer(tap)
-                    self.cardViews.append(view)
-                    self.addSubview(view)
-                }
-            }
-        }else if(cardCount > calculatedSize) {
-            //we need to remove from the top and add it back to deck, resizing deck
-            for _ in 0..<columns {
-                if let view = cardViews.popLast() {
-                    let card = view.card
-                    self.deck.addCardBack(card: card)
-                    view.removeFromSuperview()
-                }
-            }
+            self.appendRows()
+        }else if cardCount > calculatedSize {
+            self.truncateRows()
         }
         self.fixCardContraints()
+    }
+    
+    private func appendRows(){
+        let calculatedSize = columns * rows
+        for index in cardViews.count..<calculatedSize {
+            let row = Int((index / columns))
+            let column = index % columns
+            if let card = deck.dealCard() {
+                let view = SetCardEnhancedView()
+                view.setCard(card: card)
+                let paddingX = (self.columnWidth - self.viewWidth)
+                let positionX = paddingX / 2 + (self.columnWidth * CGFloat(column))
+                let paddingY = (self.columnHeight - self.viewHeight)
+                let positionY = paddingY / 2 + (self.columnHeight * CGFloat(row))
+                view.frame = CGRect(x:  positionX, y: positionY, width: self.viewWidth, height: self.viewHeight)
+                let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapSetCardView(_:)))
+                view.isOpaque = false
+                view.isUserInteractionEnabled = true
+                view.addGestureRecognizer(tap)
+                self.cardViews.append(view)
+                self.addSubview(view)
+            }
+        }
+    }
+    
+    private func truncateRows() {
+        let calculatedSize = columns * rows
+        let cardCount = self.cardViews.count
+        let mod = cardCount % calculatedSize
+        print("Truncating Rows: calc: colums * rows = \(calculatedSize), cardCount: \(cardCount) MOD \(mod)")
+        for _ in 0..<mod {
+            if let view = cardViews.popLast() {
+                let card = view.card
+                self.deck.addCardBack(card: card)
+                view.removeFromSuperview()
+            }
+        }
     }
     
     
@@ -244,7 +277,7 @@ class SetCardGridContainerView: UIView {
                 players[currentPlayer]? -= 5
             }
         }
-        if(!cardViews.hasMatch()){
+        if(!cardViews.hasMatch() && deck.count() == 0){
             gameOver()
         }
     }
@@ -272,7 +305,6 @@ class SetCardGridContainerView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         fixCardContraints()
-        print("CLASS CARDS: \(cardViews.count). DECK CARDS \(deck.count())  rows: \(rows) + columns: \(columns)")
     }
     
     //endregion
