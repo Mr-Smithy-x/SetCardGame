@@ -11,6 +11,32 @@ import Foundation
 //Array of SetCardView Extension
 extension Array where Element == SetCardView {
     
+    //We only want visible matches
+    func matches() -> Int {
+        let matchesArray = self.filter({ (view) -> Bool in
+            return view.isVisible
+        });
+        var matches = 0
+        if matchesArray.count == 0 {
+            return 0
+        }
+        for i in 0...matchesArray.count - 1 {
+            for j in 0...matchesArray.count - 1  {
+                for k in 0...matchesArray.count - 1 {
+                    if i == j || j == k || i == k {
+                        continue
+                    }
+                    if(CardMatchHelper.isSet(cardOne: matchesArray[i].card, cardTwo: matchesArray[j].card, cardThree: matchesArray[k].card)) {
+                        matches += 1
+                    }
+                }
+            }
+        }
+        print("MATCHES \(matches), REAL MATCHES \(matches / 3)")
+        return matches / 3; //to calculate the real count
+    }
+    
+    
     func findMatching(show: Bool = true) -> Bool {
         var should_break = false
         if self.count == 0 {

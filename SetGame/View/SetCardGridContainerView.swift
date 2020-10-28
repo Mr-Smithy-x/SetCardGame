@@ -11,22 +11,7 @@ import UIKit
 
 @IBDesignable
 class SetCardGridContainerView: UIView {
-
-    var timer = Timer()
-    var countdown = 15 {
-        didSet {
-            print(players)
-            timerProtocol?.onTicked(player: currentPlayer, current_timer: countdown)
-            setNeedsDisplay()
-            setNeedsLayout()
-            if(!cardViews.hasMatch() && deck.count() == 0){
-                gameOver()
-            }
-            
-            print("!hasMatch: \(!cardViews.hasMatch()) && Deck Count == 0: \(deck.count() == 0)")
-        }
-    }
-    var timerProtocol: SetGameTimerProtocol? = nil
+    
     @IBInspectable
     var rows: Int = 6 {
         didSet {
@@ -35,18 +20,40 @@ class SetCardGridContainerView: UIView {
                 setNeedsLayout()
             }else{
                 rows = oldValue
-                print(rows)
             }
         }
     }
     
     @IBInspectable
+    var waiting: Int = 15
+    
+    @IBInspectable
     var columns: Int = 3 {
         didSet {
-            setNeedsDisplay()
-            setNeedsLayout()
+            if(deck.count() > 0){
+                setNeedsDisplay()
+                setNeedsLayout()
+            }else{
+                columns = oldValue
+            }
         }
     }
+    
+    private(set) var timer = Timer()
+    private(set) var timerProtocol: SetGameTimerProtocol? = nil
+    private(set) var countdown = 15 {
+        didSet {
+            let score = players[currentPlayer] ?? 0
+            timerProtocol?.onTicked(player: currentPlayer, current_timer: countdown, score: score)
+            setNeedsDisplay()
+            setNeedsLayout()
+            if(!cardViews.hasMatch() && deck.count() == 0){
+                gameOver()
+            }
+            ///print("!hasMatch: \(!cardViews.hasMatch()) && Deck Count == 0: \(deck.count() == 0)")
+        }
+    }
+    
     @IBInspectable
     var playing: Int = 2 {
         didSet {
@@ -100,57 +107,63 @@ class SetCardGridContainerView: UIView {
     }
     
     ///Adds a new row which then deals a new call via didSet observer + calling draw in the background
+    ///Prevents user from adding a new row if there are 3 or more matches
     func dealNewCards(){
-        self.rows += 1
+        print("Matches: \(self.cardViews.matches())")
+        if(self.cardViews.matches() < 3) {
+            self.rows += 1
+        }
     }
     
+    //reset the deck and start a new game
     func startNewGame(){
         players[0] = 0
         players[1] = 0
+        currentPlayer = 0
+        countdown = waiting
         deck.reset()
         for card in cardViews {
             card.setCard(card: deck.dealCard())
         }
         rows = 4
-        
         if timer.isValid {
             timer.invalidate()
         }
         timer = Timer()
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        timer.tolerance = 0.3
         timer.fire()
         timerAction()
     }
     
-    @objc func timerAction(){
+    //countdown $(waiting) seconds and switch players
+    @objc private func timerAction(){
         countdown-=1
         if countdown == 0 {
-            currentPlayer = (currentPlayer + 1) % 2
-            print("Current Player: \(currentPlayer)")
-            countdown = 15
-        }else{
-            print("Current Countdown: \(countdown)")
+            if (playing > 1) {
+                currentPlayer = (currentPlayer + 1) % 2
+            }else{
+                currentPlayer = 0
+            }
+            countdown = waiting
         }
     }
     
+    ///We want to make sure that the contrains for the cards are accurate and that we should recalculate each frame for the cards
     private func fixCardContraints(){
         for index in 0..<subviews.count {
+            ///print("Grid Index = (Row: \(row), Column: \(column), Quik Maffs: \(row * columns), Index: \(indexi) or \(index)")
             let row    = Int((index / columns))
             let column = index % columns
-            //print("Grid Index = (Row: \(row), Column: \(column), Quik Maffs: \(row * columns), Index: \(indexi) or \(index)")
-            if index <= subviews.count {
-                let view = getView(row: row, column: column)
-                let paddingX = (self.columnWidth - self.viewWidth) / 2
-                let positionX = paddingX + (self.columnWidth * CGFloat(column))
-                                   
-                let paddingY = (self.columnHeight - self.viewHeight) / 2
-                let positionY = paddingY + (self.columnHeight * CGFloat(row))
-                              
-                view.frame = CGRect(
-                    x:  positionX, y: positionY,
-                    width: self.viewWidth, height: self.viewHeight
-                )
-            }
+            let view = getView(row: row, column: column)
+            let paddingX = (self.columnWidth - self.viewWidth) / 2
+            let positionX = paddingX + (self.columnWidth * CGFloat(column))
+            let paddingY = (self.columnHeight - self.viewHeight) / 2
+            let positionY = paddingY + (self.columnHeight * CGFloat(row))
+            view.frame = CGRect(
+                x:  positionX, y: positionY,
+                width: self.viewWidth, height: self.viewHeight
+            )
         }
     }
     
@@ -198,7 +211,7 @@ class SetCardGridContainerView: UIView {
     private func dealCards(){
         let calculatedSize = columns * rows
         let cardCount = self.cardViews.count
-        print("CALC: \(calculatedSize) - Count \(cardCount)")
+        ///print("CALC: \(calculatedSize) - Count \(cardCount)")
         if cardCount < calculatedSize  {
             self.appendRows()
         }else if cardCount > calculatedSize {
@@ -234,7 +247,7 @@ class SetCardGridContainerView: UIView {
         let calculatedSize = columns * rows
         let cardCount = self.cardViews.count
         let mod = cardCount % calculatedSize
-        print("Truncating Rows: calc: colums * rows = \(calculatedSize), cardCount: \(cardCount) MOD \(mod)")
+        ///print("Truncating Rows: calc: colums * rows = \(calculatedSize), cardCount: \(cardCount) MOD \(mod)")
         for _ in 0..<mod {
             if let view = cardViews.popLast() {
                 let card = view.card

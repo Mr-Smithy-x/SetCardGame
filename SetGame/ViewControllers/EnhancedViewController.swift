@@ -17,8 +17,8 @@ class EnhancedViewController: UIViewController, SetGameTimerProtocol {
     
     @IBOutlet weak var currentPlayer: UILabel!
     
-    func onTicked(player: Int, current_timer: Int) {
-        currentPlayer.text = "Current Player: \(player + 1)\n\(current_timer) seconds left"
+    func onTicked(player: Int, current_timer: Int, score: Int) {
+        currentPlayer.text = "Current Player: \(player + 1) - Score: \(score)\n\(current_timer) seconds left"
     }
     
     
