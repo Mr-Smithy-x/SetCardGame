@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-
     
     var cardDeck: SetCardDeck = SetCardDeck()
     var reuseIdentifier: String = "card"
@@ -28,7 +27,7 @@ class ViewController: UIViewController {
    
     @IBOutlet weak var dealCardBtn: UIButton!
     @IBOutlet var scoreCard: UILabel!
-    @IBOutlet var views: [SetCardView]! {
+    @IBOutlet var views: [SetCardEnhancedView]! {
         didSet {
             views.forEach { (view) in
                 let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapSetCardView(_:)))
@@ -57,9 +56,8 @@ class ViewController: UIViewController {
             if let c = cardDeck.dealCard() {
                 view.setCard(card: c)
             }
-            view.isVisible = true
-            view.cheat = false
-            view.selected = false
+            view.isCheating = false
+            view.isSelected = false
         }
         startTime = self.getCurrentMillis()
         lastMatchTime = 0
@@ -100,9 +98,9 @@ class ViewController: UIViewController {
     @objc func tapSetCardView(_ sender : UITapGestureRecognizer ) {
         guard sender.view != nil else { return }
         let view = (sender.view as! SetCardView)
-        print("selected: \(view.selected)")
-        view.selected = !view.selected
-        print("changed_to: \(view.selected)")
+        print("selected: \(view.isSelected)")
+        view.isSelected = !view.isSelected
+        print("changed_to: \(view.isSelected)")
         if(views.validate()){
             //We found a set match
             //We should add a score

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		17551B80252A70460089607A /* CardMatchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17551B7F252A70460089607A /* CardMatchHelper.swift */; };
+		175622A4252E77C100DFA028 /* SetCardEnhancedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175622A3252E77C100DFA028 /* SetCardEnhancedView.swift */; };
+		176C997A2537B82400325CAE /* Array+SetCardEnhancedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C99792537B82300325CAE /* Array+SetCardEnhancedView.swift */; };
 		1789EED42523E86E00D6A6D8 /* SetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1789EED32523E86E00D6A6D8 /* SetCardView.swift */; };
 		179CA65D2519660100CEC1F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CA65C2519660100CEC1F5 /* AppDelegate.swift */; };
 		179CA65F2519660200CEC1F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CA65E2519660200CEC1F5 /* SceneDelegate.swift */; };
@@ -22,6 +24,9 @@
 		179CA6922519690900CEC1F5 /* SetCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CA6912519690900CEC1F5 /* SetCardDeck.swift */; };
 		17BBFEC2252ACD8E00ABB8DA /* Array+SetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BBFEC1252ACD8E00ABB8DA /* Array+SetCardView.swift */; };
 		17BBFEC4252B51C700ABB8DA /* screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 17BBFEC3252B51C600ABB8DA /* screenshot.png */; };
+		17D3A6852548B382003AE6EE /* SetCardGridContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D3A6842548B382003AE6EE /* SetCardGridContainerView.swift */; };
+		17D3A6882548D3AC003AE6EE /* EnhancedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D3A6872548D3AC003AE6EE /* EnhancedViewController.swift */; };
+		17D3A68B25492256003AE6EE /* SetGameTimerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D3A68A25492256003AE6EE /* SetGameTimerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		17551B7F252A70460089607A /* CardMatchHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMatchHelper.swift; sourceTree = "<group>"; };
+		175622A3252E77C100DFA028 /* SetCardEnhancedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardEnhancedView.swift; sourceTree = "<group>"; };
+		176C99792537B82300325CAE /* Array+SetCardEnhancedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SetCardEnhancedView.swift"; sourceTree = "<group>"; };
 		1789EED32523E86E00D6A6D8 /* SetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardView.swift; sourceTree = "<group>"; };
 		179CA6592519660100CEC1F5 /* SetGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		179CA65C2519660100CEC1F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +70,9 @@
 		179CA6912519690900CEC1F5 /* SetCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardDeck.swift; sourceTree = "<group>"; };
 		17BBFEC1252ACD8E00ABB8DA /* Array+SetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SetCardView.swift"; sourceTree = "<group>"; };
 		17BBFEC3252B51C600ABB8DA /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
+		17D3A6842548B382003AE6EE /* SetCardGridContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardGridContainerView.swift; sourceTree = "<group>"; };
+		17D3A6872548D3AC003AE6EE /* EnhancedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedViewController.swift; sourceTree = "<group>"; };
+		17D3A68A25492256003AE6EE /* SetGameTimerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameTimerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				1789EED32523E86E00D6A6D8 /* SetCardView.swift */,
+				175622A3252E77C100DFA028 /* SetCardEnhancedView.swift */,
+				17D3A6842548B382003AE6EE /* SetCardGridContainerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -139,6 +151,8 @@
 		179CA65B2519660100CEC1F5 /* SetGame */ = {
 			isa = PBXGroup;
 			children = (
+				17D3A6892549223D003AE6EE /* Protocol */,
+				17D3A6862548D398003AE6EE /* ViewControllers */,
 				17BBFEC0252ACD6900ABB8DA /* Extensions */,
 				17551B7E252A700B0089607A /* Helper */,
 				17551B7B252A38640089607A /* Models */,
@@ -177,8 +191,25 @@
 			isa = PBXGroup;
 			children = (
 				17BBFEC1252ACD8E00ABB8DA /* Array+SetCardView.swift */,
+				176C99792537B82300325CAE /* Array+SetCardEnhancedView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		17D3A6862548D398003AE6EE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				17D3A6872548D3AC003AE6EE /* EnhancedViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		17D3A6892549223D003AE6EE /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				17D3A68A25492256003AE6EE /* SetGameTimerProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,9 +349,14 @@
 				179CA65D2519660100CEC1F5 /* AppDelegate.swift in Sources */,
 				179CA6902519662200CEC1F5 /* SetCard.swift in Sources */,
 				17BBFEC2252ACD8E00ABB8DA /* Array+SetCardView.swift in Sources */,
+				175622A4252E77C100DFA028 /* SetCardEnhancedView.swift in Sources */,
+				17D3A68B25492256003AE6EE /* SetGameTimerProtocol.swift in Sources */,
 				179CA6672519660200CEC1F5 /* SetGame.xcdatamodeld in Sources */,
+				17D3A6852548B382003AE6EE /* SetCardGridContainerView.swift in Sources */,
 				179CA65F2519660200CEC1F5 /* SceneDelegate.swift in Sources */,
+				17D3A6882548D3AC003AE6EE /* EnhancedViewController.swift in Sources */,
 				179CA6922519690900CEC1F5 /* SetCardDeck.swift in Sources */,
+				176C997A2537B82400325CAE /* Array+SetCardEnhancedView.swift in Sources */,
 				17551B80252A70460089607A /* CardMatchHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

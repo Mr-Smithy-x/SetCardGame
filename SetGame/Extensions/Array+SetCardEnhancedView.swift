@@ -1,15 +1,15 @@
 //
-//  Array+SetCardView.swift
+//  Array+SetCardEnhancedView.swift
 //  SetGame
 //
-//  Created by Charlton Smith on 10/4/20.
+//  Created by Charlton Smith on 10/14/20.
 //  Copyright © 2020 Charlton Smith. All rights reserved.
 //
 
 import Foundation
 
 //Array of SetCardView Extension
-extension Array where Element == SetCardView {
+extension Array where Element == SetCardEnhancedView {
     
     func findMatching(show: Bool = true) -> Bool {
         var should_break = false

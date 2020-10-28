@@ -22,11 +22,11 @@ class SetCard: Equatable {
     func contents() -> String {
         var shape: String
         switch self.shape {
-        case .triangle:
+        case .squiggle:
             shape = "▲"
-        case .circle:
+        case .oval:
             shape = "●"
-        case .square:
+        case .diamond:
             shape = "◼︎"
         }
         
@@ -38,10 +38,10 @@ class SetCard: Equatable {
     }
     
     public enum Shapes: Int {
-        case triangle
-        case circle
-        case square
-        static var all = [Shapes.triangle, .circle, .square]
+        case squiggle
+        case oval
+        case diamond
+        static var all = [Shapes.squiggle, .oval, .diamond]
     }
     
     public enum Shades: Int {

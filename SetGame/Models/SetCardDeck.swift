@@ -21,6 +21,16 @@ struct SetCardDeck {
         initialize()
     }
     
+    mutating func addCardBack(card: SetCard){
+        self.deck.append(card)
+    }
+    
+    mutating func shuffle(){
+        self.deck.shuffle()
+    }
+    
+    
+    
     mutating func dealCard() -> SetCard? {
         if self.isEmpty() {
             return nil

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4U5-WG-q1n">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -21,20 +21,20 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="LeL-my-YgS">
                                         <rect key="frame" x="0.0" y="0.0" width="381" height="105"/>
                                         <subviews>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xx-o3-2CD" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xx-o3-2CD" customClass="SetCardEnhancedView" customModule="SetGame" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="78" height="105"/>
                                                 <gestureRecognizers/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="stagnant" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="as8-f8-kee" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="as8-f8-kee" customClass="SetCardEnhancedView" customModule="SetGame" customModuleProvider="target">
                                                 <rect key="frame" x="101" y="0.0" width="78" height="105"/>
                                             </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ka7-n2-j9b" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ka7-n2-j9b" customClass="SetCardEnhancedView" customModule="SetGame" customModuleProvider="target">
                                                 <rect key="frame" x="202" y="0.0" width="78" height="105"/>
                                             </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQu-vG-VtT" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQu-vG-VtT" customClass="SetCardEnhancedView" customModule="SetGame" customModuleProvider="target">
                                                 <rect key="frame" x="303" y="0.0" width="78" height="105"/>
                                             </view>
                                         </subviews>
@@ -42,16 +42,16 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="Kmv-Xa-VJ3">
                                         <rect key="frame" x="0.0" y="130" width="381" height="105"/>
                                         <subviews>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEj-TJ-Pxx" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEj-TJ-Pxx" customClass="SetCardEnhancedView" customModule="SetGame" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="78" height="105"/>
                                             </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URR-oc-TA5" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URR-oc-TA5" customClass="SetCardEnhancedView" customModule="SetGame" customModuleProvider="target">
                                                 <rect key="frame" x="101" y="0.0" width="78" height="105"/>
                                             </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJO-1q-ZVS" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJO-1q-ZVS" customClass="SetCardEnhancedView" customModule="SetGame" customModuleProvider="target">
                                                 <rect key="frame" x="202" y="0.0" width="78" height="105"/>
                                             </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UPV-Y4-AqI" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UPV-Y4-AqI" customClass="SetCardEnhancedView" customModule="SetGame" customModuleProvider="target">
                                                 <rect key="frame" x="303" y="0.0" width="78" height="105"/>
                                             </view>
                                         </subviews>
@@ -59,16 +59,16 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="dZ7-WK-CdI">
                                         <rect key="frame" x="0.0" y="260" width="381" height="105"/>
                                         <subviews>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBN-JP-F00" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBN-JP-F00" customClass="SetCardEnhancedView" customModule="SetGame" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="78" height="105"/>
                                             </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J57-In-Jmx" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J57-In-Jmx" customClass="SetCardEnhancedView" customModule="SetGame" customModuleProvider="target">
                                                 <rect key="frame" x="101" y="0.0" width="78" height="105"/>
                                             </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Mn-RW-q9R" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Mn-RW-q9R" customClass="SetCardEnhancedView" customModule="SetGame" customModuleProvider="target">
                                                 <rect key="frame" x="202" y="0.0" width="78" height="105"/>
                                             </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obS-2Q-lOM" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obS-2Q-lOM" customClass="SetCardEnhancedView" customModule="SetGame" customModuleProvider="target">
                                                 <rect key="frame" x="303" y="0.0" width="78" height="105"/>
                                             </view>
                                         </subviews>
@@ -76,16 +76,16 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="TZA-7g-cw4">
                                         <rect key="frame" x="0.0" y="390" width="381" height="105"/>
                                         <subviews>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJH-CM-M99" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJH-CM-M99" customClass="SetCardEnhancedView" customModule="SetGame" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="78" height="105"/>
                                             </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Elh-DL-z3a" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Elh-DL-z3a" customClass="SetCardEnhancedView" customModule="SetGame" customModuleProvider="target">
                                                 <rect key="frame" x="101" y="0.0" width="78" height="105"/>
                                             </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2O-Os-Vcr" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2O-Os-Vcr" customClass="SetCardEnhancedView" customModule="SetGame" customModuleProvider="target">
                                                 <rect key="frame" x="202" y="0.0" width="78" height="105"/>
                                             </view>
-                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ooC-Ob-XXz" customClass="SetCardView" customModule="SetGame" customModuleProvider="target">
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ooC-Ob-XXz" customClass="SetCardEnhancedView" customModule="SetGame" customModuleProvider="target">
                                                 <rect key="frame" x="303" y="0.0" width="78" height="105"/>
                                             </view>
                                         </subviews>
@@ -171,6 +171,86 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--Enhanced View Controller-->
+        <scene sceneID="mNe-Lp-WeP">
+            <objects>
+                <viewController id="4U5-WG-q1n" customClass="EnhancedViewController" customModule="SetGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ObY-hf-lfY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkS-O4-vVm" customClass="SetCardGridContainerView" customModule="SetGame" customModuleProvider="target">
+                                <rect key="frame" x="20" y="122.5" width="374" height="663.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rows">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="columns">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfM-ls-SAk">
+                                <rect key="frame" x="219" y="822" width="175" height="60"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="C7b-Y0-qOy"/>
+                                </constraints>
+                                <state key="normal" title="New Game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onNewGameClicked:" destination="4U5-WG-q1n" eventType="touchUpInside" id="8aZ-S1-cVT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BN-vR-aWo">
+                                <rect key="frame" x="20" y="822" width="191" height="60"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="191" id="fFG-Uf-g4S"/>
+                                </constraints>
+                                <state key="normal" title="Peak">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPeakClicked:" destination="4U5-WG-q1n" eventType="touchUpInside" id="sEJ-5j-4HP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Player: 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNo-zL-Qbu">
+                                <rect key="frame" x="20" y="64" width="374" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QME-ff-Eb3" firstAttribute="trailing" secondItem="EfM-ls-SAk" secondAttribute="trailing" constant="20" id="3rn-0K-HpY"/>
+                            <constraint firstItem="7BN-vR-aWo" firstAttribute="top" secondItem="EfM-ls-SAk" secondAttribute="top" id="4K0-ci-VxY"/>
+                            <constraint firstItem="vNo-zL-Qbu" firstAttribute="leading" secondItem="QME-ff-Eb3" secondAttribute="leading" constant="20" id="APl-69-t7D"/>
+                            <constraint firstItem="EfM-ls-SAk" firstAttribute="bottom" secondItem="QME-ff-Eb3" secondAttribute="bottom" constant="20" id="EkE-NF-3Eu"/>
+                            <constraint firstItem="EfM-ls-SAk" firstAttribute="leading" secondItem="7BN-vR-aWo" secondAttribute="trailing" constant="8" id="FXJ-zq-7d9"/>
+                            <constraint firstItem="jkS-O4-vVm" firstAttribute="trailing" secondItem="EfM-ls-SAk" secondAttribute="trailing" id="SOU-hA-2Hg"/>
+                            <constraint firstItem="QME-ff-Eb3" firstAttribute="trailing" secondItem="vNo-zL-Qbu" secondAttribute="trailing" constant="20" id="SXL-cB-vXc"/>
+                            <constraint firstItem="7BN-vR-aWo" firstAttribute="leading" secondItem="ObY-hf-lfY" secondAttribute="leadingMargin" id="TL0-4n-yXa"/>
+                            <constraint firstItem="7BN-vR-aWo" firstAttribute="top" secondItem="jkS-O4-vVm" secondAttribute="bottom" constant="36" id="VqG-zd-rOS"/>
+                            <constraint firstItem="7BN-vR-aWo" firstAttribute="leading" secondItem="jkS-O4-vVm" secondAttribute="leading" id="Xp8-hN-sao"/>
+                            <constraint firstItem="7BN-vR-aWo" firstAttribute="firstBaseline" secondItem="EfM-ls-SAk" secondAttribute="baseline" id="d8c-Dl-aDZ"/>
+                            <constraint firstItem="vNo-zL-Qbu" firstAttribute="top" secondItem="QME-ff-Eb3" secondAttribute="top" constant="20" id="jfB-f8-68i"/>
+                            <constraint firstItem="jkS-O4-vVm" firstAttribute="top" secondItem="vNo-zL-Qbu" secondAttribute="bottom" constant="20" id="t9N-zA-yjX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QME-ff-Eb3"/>
+                    </view>
+                    <connections>
+                        <outlet property="currentPlayer" destination="vNo-zL-Qbu" id="HJX-w0-bdP"/>
+                        <outlet property="iSetGameGridView" destination="jkS-O4-vVm" id="Jf9-Z5-ZdF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uul-dM-8SJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1063.768115942029" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>

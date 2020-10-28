@@ -13,7 +13,7 @@ import UIKit
     
     
     
-    private(set) var card = SetCard(shape: SetCard.Shapes.circle, shade: SetCard.Shades.outlined, color: SetCard.Colors.red, count: 3) {
+    private(set) var card = SetCard(shape: SetCard.Shapes.oval, shade: SetCard.Shades.outlined, color: SetCard.Colors.red, count: 3) {
         didSet {
             self.shade = card.shade.rawValue
             self.shape = card.shape.rawValue
@@ -29,13 +29,14 @@ import UIKit
     private lazy var cardLabel = createLabel()
     
     
-    var selected: Bool = false {
+    var isSelected: Bool = false {
         didSet{
             setNeedsDisplay()
             setNeedsLayout()
         }
     }
-    var cheat: Bool = false {
+    
+    var isCheating: Bool = false {
         didSet {
             setNeedsDisplay()
             setNeedsLayout()
@@ -57,7 +58,7 @@ import UIKit
     
     @IBInspectable var shape: Int = 0 {
         didSet {
-            card.shape = SetCard.Shapes.init(rawValue: shape % 3) ?? SetCard.Shapes.circle
+            card.shape = SetCard.Shapes.init(rawValue: shape % 3) ?? SetCard.Shapes.oval
             setNeedsDisplay()
             setNeedsLayout()
         }
@@ -96,6 +97,7 @@ import UIKit
     
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
         setNeedsDisplay()
         setNeedsLayout()
     }
@@ -106,14 +108,14 @@ import UIKit
             let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: 16.0)
 
             roundedRect.addClip()
-            if(!self.cheat){
+            if(!self.isCheating){
                 UIColor.white.setFill()
             }else{
                 UIColor.darkGray.setFill()
             }
             roundedRect.fill()
             
-            if(selected){
+            if(isSelected){
                 UIColor.lightGray.setFill()
                 roundedRect.fill()
             }
