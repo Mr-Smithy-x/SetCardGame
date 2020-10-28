@@ -49,7 +49,7 @@ import UIKit
     
     @IBInspectable var isVisible: Bool = true {
         didSet {
-            self.isHidden = !isVisible
+            //self.isHidden = !isVisible
             setNeedsDisplay()
             setNeedsLayout()
             
@@ -104,7 +104,6 @@ import UIKit
     
     
     override func draw(_ rect: CGRect) {
-        if(self.isVisible) {
             let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: 16.0)
 
             roundedRect.addClip()
@@ -119,6 +118,7 @@ import UIKit
                 UIColor.lightGray.setFill()
                 roundedRect.fill()
             }
+        if(self.isVisible) {
             addSubview(cardLabel)
         }
         

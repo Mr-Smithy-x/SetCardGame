@@ -54,16 +54,18 @@ import UIKit
         UIColor.white.setFill()
         roundedRect.fill()
         roundedRect.stroke()
-        let path = UIBezierPath()
-        switch card.shape {
-            case .diamond:
-                path.append(drawDiamond())
-            case .oval:
-                path.append(drawOval())
-            case .squiggle:
-                path.append(drawSquiggle())
+        if(isVisible){
+            let path = UIBezierPath()
+            switch card.shape {
+                case .diamond:
+                    path.append(drawDiamond())
+                case .oval:
+                    path.append(drawOval())
+                case .squiggle:
+                    path.append(drawSquiggle())
+            }
+            showPath(path)
         }
-        showPath(path)
     }
     
     private func showPath(_ path: UIBezierPath) {
