@@ -27,7 +27,7 @@ class ViewController: UIViewController {
    
     @IBOutlet weak var dealCardBtn: UIButton!
     @IBOutlet var scoreCard: UILabel!
-    @IBOutlet var views: [SetCardEnhancedView]! {
+    @IBOutlet var views: [SetCardView]! {
         didSet {
             views.forEach { (view) in
                 let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapSetCardView(_:)))

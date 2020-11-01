@@ -14,7 +14,6 @@
 		179CA65D2519660100CEC1F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CA65C2519660100CEC1F5 /* AppDelegate.swift */; };
 		179CA65F2519660200CEC1F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CA65E2519660200CEC1F5 /* SceneDelegate.swift */; };
 		179CA6612519660200CEC1F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CA6602519660200CEC1F5 /* ViewController.swift */; };
-		179CA6642519660200CEC1F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 179CA6622519660200CEC1F5 /* Main.storyboard */; };
 		179CA6672519660200CEC1F5 /* SetGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 179CA6652519660200CEC1F5 /* SetGame.xcdatamodeld */; };
 		179CA6692519660400CEC1F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 179CA6682519660400CEC1F5 /* Assets.xcassets */; };
 		179CA66C2519660400CEC1F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 179CA66A2519660400CEC1F5 /* LaunchScreen.storyboard */; };
@@ -22,6 +21,8 @@
 		179CA6822519660500CEC1F5 /* SetGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CA6812519660500CEC1F5 /* SetGameUITests.swift */; };
 		179CA6902519662200CEC1F5 /* SetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CA68F2519662200CEC1F5 /* SetCard.swift */; };
 		179CA6922519690900CEC1F5 /* SetCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CA6912519690900CEC1F5 /* SetCardDeck.swift */; };
+		17B8DB8B254E502B00F4DAD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17B8DB8A254E502A00F4DAD5 /* Main.storyboard */; };
+		17B8DB8D254E584500F4DAD5 /* GameChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B8DB8C254E584500F4DAD5 /* GameChooserViewController.swift */; };
 		17BBFEC2252ACD8E00ABB8DA /* Array+SetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BBFEC1252ACD8E00ABB8DA /* Array+SetCardView.swift */; };
 		17BBFEC4252B51C700ABB8DA /* screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 17BBFEC3252B51C600ABB8DA /* screenshot.png */; };
 		17D3A6852548B382003AE6EE /* SetCardGridContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D3A6842548B382003AE6EE /* SetCardGridContainerView.swift */; };
@@ -55,7 +56,6 @@
 		179CA65C2519660100CEC1F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		179CA65E2519660200CEC1F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		179CA6602519660200CEC1F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		179CA6632519660200CEC1F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		179CA6662519660200CEC1F5 /* SetGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SetGame.xcdatamodel; sourceTree = "<group>"; };
 		179CA6682519660400CEC1F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		179CA66B2519660400CEC1F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,6 +68,8 @@
 		179CA6832519660500CEC1F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		179CA68F2519662200CEC1F5 /* SetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCard.swift; sourceTree = "<group>"; };
 		179CA6912519690900CEC1F5 /* SetCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardDeck.swift; sourceTree = "<group>"; };
+		17B8DB8A254E502A00F4DAD5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		17B8DB8C254E584500F4DAD5 /* GameChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameChooserViewController.swift; sourceTree = "<group>"; };
 		17BBFEC1252ACD8E00ABB8DA /* Array+SetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SetCardView.swift"; sourceTree = "<group>"; };
 		17BBFEC3252B51C600ABB8DA /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
 		17D3A6842548B382003AE6EE /* SetCardGridContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardGridContainerView.swift; sourceTree = "<group>"; };
@@ -160,9 +162,9 @@
 				179CA65C2519660100CEC1F5 /* AppDelegate.swift */,
 				179CA65E2519660200CEC1F5 /* SceneDelegate.swift */,
 				179CA6602519660200CEC1F5 /* ViewController.swift */,
-				179CA6622519660200CEC1F5 /* Main.storyboard */,
 				179CA6682519660400CEC1F5 /* Assets.xcassets */,
 				179CA66A2519660400CEC1F5 /* LaunchScreen.storyboard */,
+				17B8DB8A254E502A00F4DAD5 /* Main.storyboard */,
 				179CA66D2519660400CEC1F5 /* Info.plist */,
 				179CA6652519660200CEC1F5 /* SetGame.xcdatamodeld */,
 			);
@@ -199,6 +201,7 @@
 		17D3A6862548D398003AE6EE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				17B8DB8C254E584500F4DAD5 /* GameChooserViewController.swift */,
 				17D3A6872548D3AC003AE6EE /* EnhancedViewController.swift */,
 			);
 			path = ViewControllers;
@@ -319,7 +322,7 @@
 				179CA66C2519660400CEC1F5 /* LaunchScreen.storyboard in Resources */,
 				179CA6692519660400CEC1F5 /* Assets.xcassets in Resources */,
 				17BBFEC4252B51C700ABB8DA /* screenshot.png in Resources */,
-				179CA6642519660200CEC1F5 /* Main.storyboard in Resources */,
+				17B8DB8B254E502B00F4DAD5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +359,7 @@
 				179CA65F2519660200CEC1F5 /* SceneDelegate.swift in Sources */,
 				17D3A6882548D3AC003AE6EE /* EnhancedViewController.swift in Sources */,
 				179CA6922519690900CEC1F5 /* SetCardDeck.swift in Sources */,
+				17B8DB8D254E584500F4DAD5 /* GameChooserViewController.swift in Sources */,
 				176C997A2537B82400325CAE /* Array+SetCardEnhancedView.swift in Sources */,
 				17551B80252A70460089607A /* CardMatchHelper.swift in Sources */,
 			);
@@ -393,14 +397,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		179CA6622519660200CEC1F5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				179CA6632519660200CEC1F5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		179CA66A2519660400CEC1F5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -462,7 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -516,7 +512,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -530,6 +526,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y8B82M3CHF;
 				INFOPLIST_FILE = SetGame/Info.plist;
@@ -539,6 +536,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.charlton.SetGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -548,6 +546,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y8B82M3CHF;
 				INFOPLIST_FILE = SetGame/Info.plist;
@@ -557,6 +556,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.charlton.SetGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

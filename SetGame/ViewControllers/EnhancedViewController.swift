@@ -10,6 +10,17 @@ import Foundation
 import UIKit
 
 class EnhancedViewController: UIViewController, SetGameTimerProtocol {
+    
+    var players: Int = 0
+    var waiting: Int {
+        if players > 1 {
+            return 30
+        }
+        else {
+            return 1
+        }
+    }
+    
     func onFinished(scoreCard: String) {
         currentPlayer.text = scoreCard
     }
@@ -18,7 +29,13 @@ class EnhancedViewController: UIViewController, SetGameTimerProtocol {
     @IBOutlet weak var currentPlayer: UILabel!
     
     func onTicked(player: Int, current_timer: Int, score: Int) {
-        currentPlayer.text = "Current Player: \(player + 1) - Score: \(score)\n\(current_timer) seconds left"
+        var text: String = ""
+        if players > 1 {
+            text = "Current Player: \(player + 1) - Score: \(score)\n\(current_timer) seconds left"
+        }else{
+            text = "Score: \(score)"
+        }
+        currentPlayer.text = text
     }
     
     
@@ -30,6 +47,8 @@ class EnhancedViewController: UIViewController, SetGameTimerProtocol {
         let swipeDownGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
         swipeDownGesture.direction = UISwipeGestureRecognizer.Direction.down
            
+        iSetGameGridView.playing = players
+        iSetGameGridView.waiting = waiting
         iSetGameGridView.addGestureRecognizer(rotationGesture)
         iSetGameGridView.addGestureRecognizer(swipeDownGesture)
         iSetGameGridView.clipsToBounds = true
