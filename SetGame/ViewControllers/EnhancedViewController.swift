@@ -60,7 +60,16 @@ class EnhancedViewController: UIViewController, SetGameTimerProtocol {
     @objc func handleSwipe(_ sender : UISwipeGestureRecognizer ) {
         switch(sender.direction) {
             case .down:
-                iSetGameGridView.dealNewCards()
+                if(!iSetGameGridView.dealNewCards()){
+                    let alert = UIAlertController(title: "Hmmm", message: "There are \(iSetGameGridView.getMatchCount()) match(es) in this set. Do you want to deal more cards?", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                        let dealed = self.iSetGameGridView.dealNewCards(true)
+                        print("Added More Cards: \(dealed)")
+                    }))
+                    alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+
+                    self.present(alert, animated: true)
+                }
                 break
             default: break
         }

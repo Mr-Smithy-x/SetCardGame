@@ -25,7 +25,11 @@ class SetCardGridContainerView: UIView {
     }
     
     @IBInspectable
-    var waiting: Int = 15
+    var waiting: Int = 15 {
+        didSet {
+            countdown = waiting
+        }
+    }
     
     @IBInspectable
     var columns: Int = 3 {
@@ -108,11 +112,17 @@ class SetCardGridContainerView: UIView {
     
     ///Adds a new row which then deals a new call via didSet observer + calling draw in the background
     ///Prevents user from adding a new row if there are 3 or more matches
-    func dealNewCards(){
+    func dealNewCards(_ force: Bool = false) -> Bool {
         print("Matches: \(self.cardViews.matches())")
-        if(self.cardViews.matches() < 3) {
+        if(self.cardViews.matches() < 3 || force) {
             self.rows += 1
+            return true
         }
+        return false
+    }
+    
+    func getMatchCount() -> Int {
+        return self.cardViews.matches()
     }
     
     //reset the deck and start a new game
