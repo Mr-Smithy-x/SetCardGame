@@ -1,9 +1,9 @@
 # SetCardGame
 Native iOS Homework Practice Assignment
 
-![Image Preview](hw3-storyboard.png =250x "Screenshot")
-![Image Preview](hw3-game-extracredit.png =250x "Screenshot")
-![Image Preview](screenshot.png =250x "Screenshot")
+![Image Preview](hw3-storyboard.png =250x)
+![Image Preview](hw3-game-extracredit.png =250x)
+![Image Preview](screenshot.png =250x)
 
 
 Objective
