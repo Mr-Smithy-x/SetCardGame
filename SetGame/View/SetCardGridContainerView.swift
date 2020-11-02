@@ -25,7 +25,11 @@ class SetCardGridContainerView: UIView {
     }
     
     @IBInspectable
-    var waiting: Int = 15
+    var waiting: Int = 15 {
+        didSet {
+            countdown = waiting
+        }
+    }
     
     @IBInspectable
     var columns: Int = 3 {
