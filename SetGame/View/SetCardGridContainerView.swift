@@ -12,6 +12,20 @@ import UIKit
 @IBDesignable
 class SetCardGridContainerView: UIView {
     
+    let animator = UIViewPropertyAnimator(duration: 1.0, curve: .linear)
+    let dynamic = SetGameBehavior()
+    
+    required init(coder: NSCoder) {
+        super.init(coder: coder)!
+    }
+    func configureAnimations(_ card: SetCardView){
+        animator.addAnimations {
+            card.alpha = 1.0
+            card.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }
+    }
+    
+    
     @IBInspectable
     var rows: Int = 6 {
         didSet {
@@ -43,7 +57,7 @@ class SetCardGridContainerView: UIView {
         }
     }
     
-    private(set) var timer = Timer()
+    private(set) var timer: Timer?
     private(set) var timerProtocol: SetGameTimerProtocol? = nil
     private(set) var countdown = 15 {
         didSet {
@@ -63,7 +77,7 @@ class SetCardGridContainerView: UIView {
         didSet {
             players[0] = 0
             players[1] = 0
-            self.startNewGame()
+            //self.startNewGame()
             setNeedsDisplay()
             setNeedsLayout()
         }
@@ -77,7 +91,6 @@ class SetCardGridContainerView: UIView {
     private var endTime: Int64 = 0
     private(set) var cardViews: [SetCardView] = [SetCardView]()
     private(set) var deck: SetCardDeck = SetCardDeck()
-    
     
     private func getView(index: Int) -> SetCardView {
         return subviews[index] as! SetCardView
@@ -127,23 +140,37 @@ class SetCardGridContainerView: UIView {
     
     //reset the deck and start a new game
     func startNewGame(){
+        clear()
         players[0] = 0
         players[1] = 0
         currentPlayer = 0
         countdown = waiting
         deck.reset()
+        rows = 4
         for card in cardViews {
             card.setCard(card: deck.dealCard())
         }
-        rows = 4
-        if timer.isValid {
-            timer.invalidate()
+        startTimer()
+    }
+    
+    func stopTimer(){
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    func startTimer(){
+        guard timer == nil else {return}
+        if timer?.isValid ?? false {
+            timer?.invalidate()
+            timer = nil
         }
-        timer = Timer()
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
-        timer.tolerance = 0.3
-        timer.fire()
-        timerAction()
+        timer = Timer.scheduledTimer(
+            timeInterval: 1.0,
+            target: self,
+            selector: #selector(timerAction),
+            userInfo: nil,
+            repeats: true)
+        timer?.tolerance = 1
     }
     
     //countdown $(waiting) seconds and switch players
@@ -156,6 +183,9 @@ class SetCardGridContainerView: UIView {
                 currentPlayer = 0
             }
             countdown = waiting
+        }
+        if(getMatchCount() == 0 && deck.count() > 0){
+            dealNewCards(true)
         }
     }
     
@@ -170,10 +200,12 @@ class SetCardGridContainerView: UIView {
             let positionX = paddingX + (self.columnWidth * CGFloat(column))
             let paddingY = (self.columnHeight - self.viewHeight) / 2
             let positionY = paddingY + (self.columnHeight * CGFloat(row))
-            view.frame = CGRect(
-                x:  positionX, y: positionY,
-                width: self.viewWidth, height: self.viewHeight
-            )
+            UIView.animate(withDuration: 1.0) {
+                view.frame = CGRect(
+                    x:  positionX, y: positionY,
+                    width: self.viewWidth, height: self.viewHeight
+                )
+            }
         }
     }
     
@@ -213,9 +245,7 @@ class SetCardGridContainerView: UIView {
                         """
         }
         timerProtocol?.onFinished(scoreCard: scoreCard)
-        if(timer.isValid){
-            timer.invalidate()
-        }
+        stopTimer()
     }
     
     private func dealCards(){
@@ -228,6 +258,9 @@ class SetCardGridContainerView: UIView {
             self.truncateRows()
         }
         self.fixCardContraints()
+        if(getMatchCount() == 0 && deck.count() > 0){
+            dealNewCards(true)
+        }
     }
     
     private func appendRows(){
@@ -237,18 +270,27 @@ class SetCardGridContainerView: UIView {
             let column = index % columns
             if let card = deck.dealCard() {
                 let view = SetCardEnhancedView()
+                self.cardViews.append(view)
+                self.addSubview(view)
                 view.setCard(card: card)
+                dynamic.addSnap(view: view)
                 let paddingX = (self.columnWidth - self.viewWidth)
                 let positionX = paddingX / 2 + (self.columnWidth * CGFloat(column))
                 let paddingY = (self.columnHeight - self.viewHeight)
                 let positionY = paddingY / 2 + (self.columnHeight * CGFloat(row))
-                view.frame = CGRect(x:  positionX, y: positionY, width: self.viewWidth, height: self.viewHeight)
+                view.layer.position = CGPoint(x:frame.width/2, y:frame.height) //Starting position
+                UIView.animate(withDuration: 1, delay: (0.05 * Double(index))){ //Position To animate
+                    view.layer.position = CGPoint(x: positionX, y: positionY)
+                    view.layer.frame = CGRect(x:  positionX, y: positionY, width: self.viewWidth, height: self.viewHeight)
+                }
+                //CGRect(x:  positionX, y: positionY, width: self.viewWidth, height:
+                
+                //view.frame = CGRect(x:  positionX, y: positionY, width: self.viewWidth, height: self.viewHeight)
                 let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapSetCardView(_:)))
                 view.isOpaque = false
                 view.isUserInteractionEnabled = true
                 view.addGestureRecognizer(tap)
-                self.cardViews.append(view)
-                self.addSubview(view)
+                
             }
         }
     }
@@ -272,6 +314,13 @@ class SetCardGridContainerView: UIView {
         guard sender.view != nil else { return }
         let view = (sender.view as! SetCardView)
         view.isSelected = !view.isSelected
+        UIViewPropertyAnimator.runningPropertyAnimator(
+            withDuration: 0.6,
+            delay: 0,
+            options: [.repeat],
+            animations: {
+                view.transform = CGAffineTransform.identity.scaledBy(x: 0.9, y: 0.9)
+            })
         if(cardViews.validate()){
             //We found a set match
             //We should add a score
@@ -279,6 +328,14 @@ class SetCardGridContainerView: UIView {
             players[currentPlayer]? += 5
             let remainingCards = deck.count()
             if(remainingCards >= 3){
+                cardViews.forEach { (card) in
+                    UIView.transition(
+                        with: card,
+                        duration: 1.2,
+                        options: [.transitionCrossDissolve],
+                        animations: {}
+                    )
+                }
                 cardViews.replace(cards: [deck.dealCard()!, deck.dealCard()!, deck.dealCard()!])
             }else if(remainingCards > 0){
                 var remaining: [SetCard] = [SetCard]()
@@ -293,7 +350,6 @@ class SetCardGridContainerView: UIView {
                 cardViews.wipeMatches()
             }
             cardViews.reset()
-            
         }else if(cardViews.has3selected()){
             cardViews.reset()
             if(cardViews.hasMatch()){
@@ -331,6 +387,16 @@ class SetCardGridContainerView: UIView {
     }
     
     //endregion
+    
+    private func clear(){
+        cardViews.forEach { (card) in
+            UIView.animate(withDuration: 1) {
+                card.layer.position = CGPoint(x: self.frame.width/2, y: self.frame.height)
+            }
+            card.removeFromSuperview()
+            cardViews.removeFirst()
+        }
+    }
         
 }
 

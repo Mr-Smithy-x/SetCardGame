@@ -43,6 +43,7 @@ class EnhancedViewController: UIViewController, SetGameTimerProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Set Card Game (Enhanced)"
         let rotationGesture = UIRotationGestureRecognizer(target: self, action: #selector(handleRotation(_:)))
         let swipeDownGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
         swipeDownGesture.direction = UISwipeGestureRecognizer.Direction.down

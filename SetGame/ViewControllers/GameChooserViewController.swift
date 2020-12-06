@@ -13,11 +13,13 @@ class GameChooserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Game Chooser"
     }
-    
+
+    var instances: [String: EnhancedViewController] = [:]
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
+        //super.prepare(for: segue, sender: sender)
         
         switch segue.identifier {
         case "one":
@@ -36,6 +38,7 @@ class GameChooserViewController: UIViewController {
         default:
             break
         }
+        //super.prepare(for: segue, sender: sender)
     }
     
 }

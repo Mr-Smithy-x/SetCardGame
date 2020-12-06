@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		17551B80252A70460089607A /* CardMatchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17551B7F252A70460089607A /* CardMatchHelper.swift */; };
 		175622A4252E77C100DFA028 /* SetCardEnhancedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175622A3252E77C100DFA028 /* SetCardEnhancedView.swift */; };
-		176C997A2537B82400325CAE /* Array+SetCardEnhancedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C99792537B82300325CAE /* Array+SetCardEnhancedView.swift */; };
 		1789EED42523E86E00D6A6D8 /* SetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1789EED32523E86E00D6A6D8 /* SetCardView.swift */; };
 		179CA65D2519660100CEC1F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CA65C2519660100CEC1F5 /* AppDelegate.swift */; };
 		179CA65F2519660200CEC1F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179CA65E2519660200CEC1F5 /* SceneDelegate.swift */; };
@@ -28,6 +27,19 @@
 		17D3A6852548B382003AE6EE /* SetCardGridContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D3A6842548B382003AE6EE /* SetCardGridContainerView.swift */; };
 		17D3A6882548D3AC003AE6EE /* EnhancedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D3A6872548D3AC003AE6EE /* EnhancedViewController.swift */; };
 		17D3A68B25492256003AE6EE /* SetGameTimerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D3A68A25492256003AE6EE /* SetGameTimerProtocol.swift */; };
+		17E65939256C49030068B34A /* SetGameBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E65938256C49030068B34A /* SetGameBehavior.swift */; };
+		17E6594D256C78420068B34A /* ConcentrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6594B256C78420068B34A /* ConcentrationViewController.swift */; };
+		17E6594E256C78420068B34A /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6594C256C78420068B34A /* ThemeViewController.swift */; };
+		17E65953256C784D0068B34A /* OnGameListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E65952256C784D0068B34A /* OnGameListener.swift */; };
+		17E6595B256C785D0068B34A /* Card+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E65957256C785D0068B34A /* Card+Extension.swift */; };
+		17E6595C256C785D0068B34A /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E65958256C785D0068B34A /* Collection+Extension.swift */; };
+		17E6595D256C785D0068B34A /* Array+Card+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E65959256C785D0068B34A /* Array+Card+Extension.swift */; };
+		17E6595E256C785D0068B34A /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6595A256C785D0068B34A /* Int+Extension.swift */; };
+		17E65965256C786B0068B34A /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E65962256C786A0068B34A /* Concentration.swift */; };
+		17E65966256C786B0068B34A /* CardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E65963256C786A0068B34A /* CardDeck.swift */; };
+		17E65967256C786B0068B34A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E65964256C786A0068B34A /* Card.swift */; };
+		17F88DED257C4B7700DC291D /* GameSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F88DEC257C4B7700DC291D /* GameSplitViewController.swift */; };
+		17F88DF2257C875B00DC291D /* GameTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F88DF1257C875A00DC291D /* GameTabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +62,6 @@
 /* Begin PBXFileReference section */
 		17551B7F252A70460089607A /* CardMatchHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMatchHelper.swift; sourceTree = "<group>"; };
 		175622A3252E77C100DFA028 /* SetCardEnhancedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardEnhancedView.swift; sourceTree = "<group>"; };
-		176C99792537B82300325CAE /* Array+SetCardEnhancedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SetCardEnhancedView.swift"; sourceTree = "<group>"; };
 		1789EED32523E86E00D6A6D8 /* SetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardView.swift; sourceTree = "<group>"; };
 		179CA6592519660100CEC1F5 /* SetGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		179CA65C2519660100CEC1F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +86,19 @@
 		17D3A6842548B382003AE6EE /* SetCardGridContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardGridContainerView.swift; sourceTree = "<group>"; };
 		17D3A6872548D3AC003AE6EE /* EnhancedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedViewController.swift; sourceTree = "<group>"; };
 		17D3A68A25492256003AE6EE /* SetGameTimerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameTimerProtocol.swift; sourceTree = "<group>"; };
+		17E65938256C49030068B34A /* SetGameBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameBehavior.swift; sourceTree = "<group>"; };
+		17E6594B256C78420068B34A /* ConcentrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcentrationViewController.swift; sourceTree = "<group>"; };
+		17E6594C256C78420068B34A /* ThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
+		17E65952256C784D0068B34A /* OnGameListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnGameListener.swift; sourceTree = "<group>"; };
+		17E65957256C785D0068B34A /* Card+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Card+Extension.swift"; sourceTree = "<group>"; };
+		17E65958256C785D0068B34A /* Collection+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		17E65959256C785D0068B34A /* Array+Card+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Card+Extension.swift"; sourceTree = "<group>"; };
+		17E6595A256C785D0068B34A /* Int+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		17E65962256C786A0068B34A /* Concentration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
+		17E65963256C786A0068B34A /* CardDeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDeck.swift; sourceTree = "<group>"; };
+		17E65964256C786A0068B34A /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		17F88DEC257C4B7700DC291D /* GameSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSplitViewController.swift; sourceTree = "<group>"; };
+		17F88DF1257C875A00DC291D /* GameTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +129,9 @@
 		17551B7B252A38640089607A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				17E65964256C786A0068B34A /* Card.swift */,
+				17E65963256C786A0068B34A /* CardDeck.swift */,
+				17E65962256C786A0068B34A /* Concentration.swift */,
 				179CA68F2519662200CEC1F5 /* SetCard.swift */,
 				179CA6912519690900CEC1F5 /* SetCardDeck.swift */,
 			);
@@ -153,6 +180,7 @@
 		179CA65B2519660100CEC1F5 /* SetGame */ = {
 			isa = PBXGroup;
 			children = (
+				17E65937256C48B50068B34A /* Behaviors */,
 				17D3A6892549223D003AE6EE /* Protocol */,
 				17D3A6862548D398003AE6EE /* ViewControllers */,
 				17BBFEC0252ACD6900ABB8DA /* Extensions */,
@@ -192,8 +220,11 @@
 		17BBFEC0252ACD6900ABB8DA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				17E65959256C785D0068B34A /* Array+Card+Extension.swift */,
+				17E65957256C785D0068B34A /* Card+Extension.swift */,
+				17E65958256C785D0068B34A /* Collection+Extension.swift */,
+				17E6595A256C785D0068B34A /* Int+Extension.swift */,
 				17BBFEC1252ACD8E00ABB8DA /* Array+SetCardView.swift */,
-				176C99792537B82300325CAE /* Array+SetCardEnhancedView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -201,8 +232,12 @@
 		17D3A6862548D398003AE6EE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				17E6594B256C78420068B34A /* ConcentrationViewController.swift */,
+				17E6594C256C78420068B34A /* ThemeViewController.swift */,
 				17B8DB8C254E584500F4DAD5 /* GameChooserViewController.swift */,
 				17D3A6872548D3AC003AE6EE /* EnhancedViewController.swift */,
+				17F88DEC257C4B7700DC291D /* GameSplitViewController.swift */,
+				17F88DF1257C875A00DC291D /* GameTabViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -210,9 +245,18 @@
 		17D3A6892549223D003AE6EE /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				17E65952256C784D0068B34A /* OnGameListener.swift */,
 				17D3A68A25492256003AE6EE /* SetGameTimerProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		17E65937256C48B50068B34A /* Behaviors */ = {
+			isa = PBXGroup;
+			children = (
+				17E65938256C49030068B34A /* SetGameBehavior.swift */,
+			);
+			path = Behaviors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,7 +322,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Charlton Smith";
 				TargetAttributes = {
 					179CA6582519660100CEC1F5 = {
@@ -347,20 +391,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17F88DF2257C875B00DC291D /* GameTabViewController.swift in Sources */,
 				179CA6612519660200CEC1F5 /* ViewController.swift in Sources */,
 				1789EED42523E86E00D6A6D8 /* SetCardView.swift in Sources */,
+				17E65967256C786B0068B34A /* Card.swift in Sources */,
 				179CA65D2519660100CEC1F5 /* AppDelegate.swift in Sources */,
 				179CA6902519662200CEC1F5 /* SetCard.swift in Sources */,
+				17E65965256C786B0068B34A /* Concentration.swift in Sources */,
+				17E6595B256C785D0068B34A /* Card+Extension.swift in Sources */,
+				17F88DED257C4B7700DC291D /* GameSplitViewController.swift in Sources */,
+				17E6595E256C785D0068B34A /* Int+Extension.swift in Sources */,
 				17BBFEC2252ACD8E00ABB8DA /* Array+SetCardView.swift in Sources */,
 				175622A4252E77C100DFA028 /* SetCardEnhancedView.swift in Sources */,
+				17E65953256C784D0068B34A /* OnGameListener.swift in Sources */,
+				17E6594D256C78420068B34A /* ConcentrationViewController.swift in Sources */,
+				17E6595C256C785D0068B34A /* Collection+Extension.swift in Sources */,
+				17E65939256C49030068B34A /* SetGameBehavior.swift in Sources */,
 				17D3A68B25492256003AE6EE /* SetGameTimerProtocol.swift in Sources */,
 				179CA6672519660200CEC1F5 /* SetGame.xcdatamodeld in Sources */,
 				17D3A6852548B382003AE6EE /* SetCardGridContainerView.swift in Sources */,
+				17E6595D256C785D0068B34A /* Array+Card+Extension.swift in Sources */,
+				17E6594E256C78420068B34A /* ThemeViewController.swift in Sources */,
+				17E65966256C786B0068B34A /* CardDeck.swift in Sources */,
 				179CA65F2519660200CEC1F5 /* SceneDelegate.swift in Sources */,
 				17D3A6882548D3AC003AE6EE /* EnhancedViewController.swift in Sources */,
 				179CA6922519690900CEC1F5 /* SetCardDeck.swift in Sources */,
 				17B8DB8D254E584500F4DAD5 /* GameChooserViewController.swift in Sources */,
-				176C997A2537B82400325CAE /* Array+SetCardEnhancedView.swift in Sources */,
 				17551B80252A70460089607A /* CardMatchHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +490,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -458,7 +515,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -494,6 +551,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -512,7 +570,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

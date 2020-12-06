@@ -78,6 +78,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Set Card Game"
         dealInitial()
         
     }

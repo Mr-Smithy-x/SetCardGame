@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 //Array of SetCardView Extension
 extension Array where Element == SetCardView {
@@ -53,6 +54,15 @@ extension Array where Element == SetCardView {
                             self[i].isCheating = true
                             self[j].isCheating = true
                             self[k].isCheating = true
+                            UIViewPropertyAnimator.runningPropertyAnimator(
+                                withDuration: 0.6,
+                                delay: 0,
+                                options: [.transitionFlipFromLeft],
+                                animations: {
+                                    [self[i], self[j], self[k]].forEach({ (card) in
+                                        card.transform = CGAffineTransform.identity.scaledBy(x: 0.6, y: 0.6)
+                                    })
+                                })
                         }
                         should_break = true
                         if(should_break){
@@ -76,23 +86,71 @@ extension Array where Element == SetCardView {
      */
     mutating func replace(cards: [SetCard]) {
         if(cards.count > 0){
-            let indexes = self.filter { (view) -> Bool in
+            let views = self.filter { (view) -> Bool in
                 return view.isSelected
-            }.map { (view) -> Int in
-                return (self.firstIndex(of: view) ?? -1)
             }
-            var i = 0;
-            indexes.forEach { (index) in
-                if(i < cards.count){
-                    self[index].setCard(card: cards[i])
-                    self[index].isSelected = false
-                    self[index].isCheating = false
-                    i+=1
-                }else{
-                    self[index].isVisible = false
-                    self[index].isSelected = false
-                    self[index].isCheating = false
+            scaleup(views: views, cards: cards)
+        }
+    }
+    
+    
+    
+    mutating func scaleup(views: [SetCardView], cards: [SetCard]) {
+        var map: [SetCardView: CGPoint] = [:]
+        views.forEach({ (card) in
+            map[card] = card.layer.position
+            UIViewPropertyAnimator.runningPropertyAnimator(
+                withDuration: 3,
+                delay: 0,
+                options: [.transitionCurlUp],
+                animations: {
+                    let point = CGPoint(
+                        x: (card.superview?.layer.position.x ?? 0) + (card.superview?.bounds.midX ?? 0),
+                        y: (card.superview?.layer.position.y ?? 0) + (card.superview?.bounds.height ?? 0)
+                    )
+                    print("POINT TO GO: \(point)")
+                    card.layer.position = point
+            }) { (position) in
+                UIViewPropertyAnimator.runningPropertyAnimator(
+                    withDuration: 1,
+                    delay: 0,
+                    options: [.layoutSubviews],
+                    animations: {
+                        if let index = views.firstIndex(of: card) {
+                            card.setCard(card: cards[index])
+                            card.isSelected = false
+                            card.isCheating = false
+                        }
+                    }) { (position) in
+                        UIViewPropertyAnimator.runningPropertyAnimator(
+                            withDuration: 3,
+                            delay: 0,
+                            options: [.transitionCurlDown],
+                            animations: {
+                                card.layer.position = map[card]!
+                        })
+                    }
                 }
+        })
+    }
+    
+    mutating private func completeReplacement(cards: [SetCard]){
+        let indexes = filter { (view) -> Bool in
+            return view.isSelected
+        }.map { (view) -> Int in
+            return (self.firstIndex(of: view) ?? -1)
+        }
+        var i = 0;
+        indexes.forEach { (index) in
+            if(i < cards.count){
+                self[index].setCard(card: cards[i])
+                self[index].isSelected = false
+                self[index].isCheating = false
+                i+=1
+            }else{
+                self[index].isVisible = false
+                self[index].isSelected = false
+                self[index].isCheating = false
             }
         }
     }
